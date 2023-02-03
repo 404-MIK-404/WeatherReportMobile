@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".WeatherCity">
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginVertical="30dp"
         android:orientation="horizontal">
 
@@ -47,7 +50,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="25dp"
         android:orientation="vertical">
 
@@ -86,9 +88,24 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listWeatherHour"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:clickable="false"
         android:focusable="false"
+        android:background="@drawable/bg_white_rounded"
         tools:scrollbars="horizontal"/>
 
-</LinearLayout>
+        <app.futured.donut.DonutProgressView
+            android:id="@+id/viewDonutRain"
+            android:layout_width="209dp"
+            android:layout_height="206dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            app:donut_bgLineColor="@color/grey"
+            app:donut_gapAngle="270"
+            app:donut_gapWidth="20"
+            app:donut_strokeWidth="16dp" />
+
+
+
+
+    </LinearLayout>
+</ScrollView>
