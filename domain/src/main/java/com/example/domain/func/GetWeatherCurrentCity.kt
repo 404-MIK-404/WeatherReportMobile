@@ -1,6 +1,6 @@
-package com.example.domain
+package com.example.domain.func
 
-import com.example.datamod.data.repository.WeatherRepository
+import com.example.domain.repository.WeatherRepository
 
 class GetWeatherCurrentCity(private val weatherRepository: WeatherRepository) {
 

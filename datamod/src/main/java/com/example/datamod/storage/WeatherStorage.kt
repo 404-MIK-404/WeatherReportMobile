@@ -1,4 +1,4 @@
-package com.example.datamod.data.storage
+package com.example.datamod.storage
 
 interface WeatherStorage {
 

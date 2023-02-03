@@ -32,7 +32,6 @@ android {
 
 dependencies {
 
-    implementation project(path: ':datamod')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
 }

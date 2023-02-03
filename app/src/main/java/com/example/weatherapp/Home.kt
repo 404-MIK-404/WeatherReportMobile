@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.weatherapp.adapters.WeatherDaysAdapter
 import com.example.weatherapp.databinding.ActivityHomeBinding
 import com.example.weatherapp.viewmodel.HomeViewModel
+import com.example.weatherapp.viewmodel.HomeViewModelFactory
 
 class Home : AppCompatActivity() {
 
@@ -28,7 +29,7 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        vm = ViewModelProvider(this,HomeViewModelFactory(this)).get(HomeViewModel::class.java)
+        vm = ViewModelProvider(this, HomeViewModelFactory(this)).get(HomeViewModel::class.java)
         init()
     }
 

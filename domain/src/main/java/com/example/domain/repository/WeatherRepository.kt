@@ -1,4 +1,4 @@
-package com.example.datamod.data.repository
+package com.example.domain.repository
 
 
 interface WeatherRepository {

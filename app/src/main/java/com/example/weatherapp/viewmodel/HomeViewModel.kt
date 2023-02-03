@@ -4,8 +4,9 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.domain.FindWeatherCurrentCity
-import com.example.domain.GetWeatherCurrentCity
+import com.example.domain.func.FindWeatherCurrentCity
+import com.example.domain.func.GetWeatherCurrentCity
+import com.example.weatherapp.WeatherCity
 
 class HomeViewModel(private val getWeatherCurrentCity: GetWeatherCurrentCity,
                     private val findWeatherCurrentCity: FindWeatherCurrentCity

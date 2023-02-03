@@ -1,7 +1,7 @@
-package com.example.datamod.data.storage.sharedrefs
+package com.example.datamod.sharedrefs
 
 import android.content.Context
-import com.example.datamod.data.storage.WeatherStorage
+import com.example.datamod.storage.WeatherStorage
 
 
 private const val SHARED_PREFS_NAME = "shared_prefs_name"
