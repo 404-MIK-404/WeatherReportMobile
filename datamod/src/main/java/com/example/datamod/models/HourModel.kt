@@ -5,14 +5,10 @@ import com.google.gson.annotations.SerializedName
 data class HourModel(
 
     @SerializedName("time")
-    private val time: String?,
+    val time: String?,
 
     @SerializedName("temp_c")
-    private val temp_c: String?,
+    val temp_c: String?,
 
     @SerializedName("condition")
-    private val conditionModel: ConditionModel) {
-
-
-
-}
+    val conditionModel: ConditionModel)

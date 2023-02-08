@@ -9,7 +9,7 @@ private const val API_KEY = "d9e157222b124c30967134020230102"
 
 interface RetroServiceInterface {
 
-    @GET("forecast.json?key=$API_KEY&q=&days=5")
-    fun getInfoWeatherCity(@Query("q")city: String): Call<WeatherResponse>
+    @GET("forecast.json?key=$API_KEY")
+    suspend fun getInfoWeatherCity(@Query("q")city: String,@Query("days")days: Int = 5): WeatherResponse
 
 }

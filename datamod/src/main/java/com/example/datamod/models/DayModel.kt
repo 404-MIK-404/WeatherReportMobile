@@ -5,10 +5,9 @@ import com.google.gson.annotations.SerializedName
 data class DayModel(
 
     @SerializedName("avgtemp_c")
-    private val avgtemp_c: String?,
+    val avgtemp_c: String,
 
     @SerializedName("condition")
-    private val conditionModel: ConditionModel,
+    val conditionModel: ConditionModel,
 
-) {
-}
+)

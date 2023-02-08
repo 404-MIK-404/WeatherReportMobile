@@ -44,5 +44,12 @@ class WeatherDaysAdapter: RecyclerView.Adapter<WeatherDaysAdapter.WeatherDaysHol
         notifyDataSetChanged()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun clearAllData(){
+        weatherDayList.clear()
+        notifyDataSetChanged()
+    }
+
+
 }
 

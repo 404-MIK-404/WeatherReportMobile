@@ -1,18 +1,22 @@
 package com.example.weatherapp
 
-import android.annotation.SuppressLint
-import androidx.lifecycle.ViewModelProvider
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
+import android.widget.LinearLayout
 import android.widget.SearchView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.datamod.response.WeatherResponse
 import com.example.weatherapp.adapters.WeatherDaysAdapter
 import com.example.weatherapp.databinding.ActivityHomeBinding
 import com.example.weatherapp.viewmodel.HomeViewModel
 import com.example.weatherapp.viewmodel.HomeViewModelFactory
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Home : AppCompatActivity() {
 
@@ -20,6 +24,10 @@ class Home : AppCompatActivity() {
     private val adapter = WeatherDaysAdapter()
     private lateinit var searchViewCityWeather: SearchView
     private lateinit var viewNameCity: TextView
+
+
+    private lateinit var homeLinearLayout: LinearLayout
+
 
 
     private lateinit var vm: HomeViewModel
@@ -31,46 +39,78 @@ class Home : AppCompatActivity() {
         setContentView(binding.root)
         vm = ViewModelProvider(this, HomeViewModelFactory(this)).get(HomeViewModel::class.java)
         init()
+        initAnimation()
+        initSearchViewCityEvent()
+        initChangeValue()
+    }
+
+    private fun initAnimation(){
+
+        val animationDrawable: AnimationDrawable = homeLinearLayout.background as AnimationDrawable
+        animationDrawable.setEnterFadeDuration(10);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start()
+
     }
 
 
-    @SuppressLint("ClickableViewAccessibility")
-    private fun init(){
-        searchViewCityWeather = findViewById(R.id.searchViewCityWeather)
-        viewNameCity = findViewById(R.id.viewNameCity)
+    private fun initSearchViewCityEvent(){
         searchViewCityWeather.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String?): Boolean {
                 return false
             }
 
             override fun onQueryTextSubmit(query: String?): Boolean {
-                vm.saveCity(query.toString())
-                vm.getCity()
+                vm.findInfoAboutWeather(query.toString())
                 return false
             }
         })
+    }
 
-        vm.getCityLive().observe(this, Observer {  text ->
-            viewNameCity.text = text
+    private fun initChangeValue(){
+        vm.getResponseWeather().observe(this, Observer { resposne ->
+            setValueToPresentation(resposne)
         })
+
+    }
+
+    private fun setValueToPresentation(response: WeatherResponse){
+        adapter.clearAllData()
+
+        with(binding){
+            val location = response.locationModel
+            val current = response.currentModel
+            val forecast = response.forecastDayList
+            viewNameCity.text = location.name
+            valueTempWeather.text = current.temp_c + " °С"
+            valueTimeLocalCurrentCity.text = location.localtime
+            valueUV.text = current.uv
+            valueHumidity.text = current.humidity
+            for (item in forecast.forecastDayModel){
+                val sdf: SimpleDateFormat  = SimpleDateFormat("yyyy-MM-dd")
+                val date = sdf.parse(item.date.toString())
+                adapter.addWeatherDay(WeatherDay(R.mipmap.partly_cloudy,
+                    SimpleDateFormat("EE", Locale.ENGLISH).format(date.time),item.dayModel.avgtemp_c))
+            }
+        }
+    }
+
+    private fun init(){
+        searchViewCityWeather = findViewById(R.id.searchViewCityWeather)
+        homeLinearLayout = findViewById(R.id.homeLinearLayout)
+        viewNameCity = findViewById(R.id.viewNameCity)
 
         binding.apply {
             listWeatherDays.layoutManager = GridLayoutManager(this@Home,5)
             listWeatherDays.adapter = adapter
-            adapter.addWeatherDay(WeatherDay(R.mipmap.partly_cloudy,"Пн","20 °С"))
-            adapter.addWeatherDay(WeatherDay(R.mipmap.partly_cloudy,"Вт","20 °С"))
-            adapter.addWeatherDay(WeatherDay(R.mipmap.partly_cloudy,"Ср","20 °С"))
-            adapter.addWeatherDay(WeatherDay(R.mipmap.partly_cloudy,"Чт","20 °С"))
-            adapter.addWeatherDay(WeatherDay(R.mipmap.partly_cloudy,"Пт","20 °С"))
             setChangeActivityToWeatherCity.setOnClickListener{
                 var i: Intent = Intent(this@Home,WeatherCity::class.java)
                 startActivity(i)
             }
         }
-
-
-
     }
+
+
 
 
 }

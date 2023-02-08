@@ -1,11 +1,13 @@
 package com.example.datamod.storage
 
+import com.example.datamod.response.WeatherResponse
+
 interface WeatherStorage {
 
 
-    fun save(nameCity: String)
+    fun save(nameCity: WeatherResponse)
 
-    fun getCity(): String
+    fun getWeather(): String
 
 
 }

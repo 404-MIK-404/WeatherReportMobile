@@ -7,4 +7,24 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorTransparentStatusBar">#14ffffff</color>
+
+    <color name="colorGradientStartMorning">#cd9cf2</color>
+    <color name="colorGradientCenterMorning">#ee609c</color>
+    <color name="colorGradientEndMorning">#b465da</color>
+
+    <color name="colorGradientStartDay">#4facfe</color>
+    <color name="colorGradientCenterDay">#38f9d7</color>
+    <color name="colorGradientEndDay">#43e97b</color>
+
+    <color name="colorGradientStartEvening">#8ec5fc</color>
+    <color name="colorGradientCenterEvening">#b490ca</color>
+    <color name="colorGradientEndEvening">#8ec5fc</color>
+
+    <color name="colorGradientStartNight">#330867</color>
+    <color name="colorGradientCenterNight">#5ee7df</color>
+    <color name="colorGradientEndNight">#30cfd0</color>
+
+
 </resources>

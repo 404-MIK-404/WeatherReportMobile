@@ -6,19 +6,11 @@ import com.example.datamod.models.LocationModel
 import com.google.gson.annotations.SerializedName
 
 data class WeatherResponse(
-
     @SerializedName("current")
-    private val currentModel: CurrentModel,
+    val currentModel: CurrentModel,
 
     @SerializedName("location")
-    private val locationModel: LocationModel,
+    val locationModel: LocationModel,
 
     @SerializedName("forecast")
-    private val forecastDayList: ForecastDayList,
-
-
-    )
-
-
-{
-}
+    val forecastDayList: ForecastDayList)
