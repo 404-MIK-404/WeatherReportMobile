@@ -1,7 +1,10 @@
 package com.example.datamod.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class CurrentModel(
 
     @SerializedName("temp_c")
@@ -13,8 +16,8 @@ data class CurrentModel(
     @SerializedName("condition")
     val condition:ConditionModel?,
 
-    @SerializedName("wind_dir")
-    val wind_dir:String?,
+    @SerializedName("wind_kph")
+    val wind_kph:String?,
 
     @SerializedName("pressure_mb")
     val pressure_mb: String?,
@@ -28,4 +31,7 @@ data class CurrentModel(
     @SerializedName("uv")
     val uv: String?,
 
-)
+    @SerializedName("gust_kph")
+    val gust_kph: String?,
+
+) : Parcelable

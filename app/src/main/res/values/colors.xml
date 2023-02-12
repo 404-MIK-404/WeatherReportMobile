@@ -8,23 +8,23 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="colorTransparentStatusBar">#14ffffff</color>
+    <color name="colorTransparentStatusBar">#00ffffff</color>
 
     <color name="colorGradientStartMorning">#cd9cf2</color>
     <color name="colorGradientCenterMorning">#ee609c</color>
     <color name="colorGradientEndMorning">#b465da</color>
 
-    <color name="colorGradientStartDay">#4facfe</color>
-    <color name="colorGradientCenterDay">#38f9d7</color>
-    <color name="colorGradientEndDay">#43e97b</color>
+    <color name="colorGradientStartDay">#f83600</color>
+    <color name="colorGradientCenterDay">#f9d423</color>
+    <color name="colorGradientEndDay">#d4fc79</color>
 
-    <color name="colorGradientStartEvening">#8ec5fc</color>
-    <color name="colorGradientCenterEvening">#b490ca</color>
-    <color name="colorGradientEndEvening">#8ec5fc</color>
+    <color name="colorGradientStartEvening">#4e4376</color>
+    <color name="colorGradientCenterEvening">#537895</color>
+    <color name="colorGradientEndEvening">#30cfd0</color>
 
-    <color name="colorGradientStartNight">#330867</color>
-    <color name="colorGradientCenterNight">#5ee7df</color>
-    <color name="colorGradientEndNight">#30cfd0</color>
+    <color name="colorGradientStartNight">#1e3c72</color>
+    <color name="colorGradientCenterNight">#243949</color>
+    <color name="colorGradientEndNight">#2a5298</color>
 
 
 </resources>

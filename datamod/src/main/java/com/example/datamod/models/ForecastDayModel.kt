@@ -1,7 +1,10 @@
 package com.example.datamod.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class ForecastDayModel(
 
     @SerializedName("date")
@@ -11,4 +14,4 @@ data class ForecastDayModel(
     val dayModel: DayModel,
 
     @SerializedName("hour")
-    val hourModel: List<HourModel>)
+    val hourModel: List<HourModel>) : Parcelable

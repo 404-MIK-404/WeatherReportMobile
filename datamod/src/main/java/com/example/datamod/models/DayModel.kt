@@ -1,7 +1,10 @@
 package com.example.datamod.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class DayModel(
 
     @SerializedName("avgtemp_c")
@@ -10,4 +13,4 @@ data class DayModel(
     @SerializedName("condition")
     val conditionModel: ConditionModel,
 
-)
+) : Parcelable

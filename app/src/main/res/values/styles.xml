@@ -8,16 +8,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="TransparentHomeTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="TransparentThemeMorning" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/animation_morning</item>
-        <item name="android:statusBarColor">@color/colorTransparentStatusBar</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="TransparentWeatherCityTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/animation_morning</item>
-        <item name="android:statusBarColor">@color/colorTransparentStatusBar</item>
+    <style name="TransparentThemeDay" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/animation_day</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
