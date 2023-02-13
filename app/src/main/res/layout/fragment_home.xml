@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.fragments.HomeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollViewHome">
+
+        <LinearLayout
+            android:id="@+id/homeLinearLayout"
+            android:layout_width="match_parent"
+            android:background="@drawable/animation_morning"
+            android:layout_height="match_parent"
+            android:paddingTop="40dp"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:focusable="true">
+
+
+            <android.widget.SearchView
+                android:id="@+id/searchViewCityWeather"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="30dp"
+                android:background="@drawable/bg_white_rounded"
+                android:gravity="center_horizontal|center_vertical"
+                android:iconifiedByDefault="false"
+                android:layout_marginVertical="8dp"
+                android:layout_alignParentTop="true"
+                android:queryHint="Search city here" />
+
+            <ImageView
+                android:id="@+id/tvIconWeatherCity"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginHorizontal="20dp"
+                app:srcCompat="@mipmap/cloudy" />
+
+            <TextView
+                android:id="@+id/viewNameCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="Moscow"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/valueTempWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="0 °С"
+                android:textSize="70sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="30dp"
+                android:background="@drawable/bg_white_rounded"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="40dp"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvTimeLocalCurrentCity"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Local time"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/tvUV"
+                        android:gravity="center_horizontal"
+                        android:text="UV"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvHumidity"
+                        android:gravity="center_horizontal"
+                        android:text="Rain %"
+                        android:textSize="12sp" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/valueTimeLocalCurrentCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="00:00"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/valueUV"
+                        android:gravity="center_horizontal"
+                        android:text="0"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/valueHumidity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="50%"
+                        android:textSize="15sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/bg_white_rounded"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Weather for the 5 days" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listWeatherDays"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autofillHints="Test"
+                        android:clickable="false"
+                        android:focusable="false"
+                        tools:scrollbars="horizontal" />
+
+                    <TextView
+                        android:id="@+id/text_empty_view_weather_days_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        android:textSize="18sp"
+                        android:textStyle="italic"
+                        android:text="No data" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginEnd="5dp"
+                    app:tint="@color/colorTransparentBlack"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/loading_circle_full"/>
+
+                <ImageView
+                    app:tint="@color/colorTransparentBlack"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/loading_circle_not_full"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

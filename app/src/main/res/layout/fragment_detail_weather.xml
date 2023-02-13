@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.fragments.DetailWeather">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollViewWeatherCity">
+
+        <LinearLayout
+            android:id="@+id/infoWeatherLayout"
+            android:background="@drawable/animation_morning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginVertical="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/valueTempCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="0°"
+                    android:textSize="64sp" />
+
+                <View
+                    android:layout_width="3dp"
+                    android:background="@color/black"
+                    android:layout_height="match_parent"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvNameCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Moscow"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/tvNameCondition"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Cloud"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/tvIconWeatherCityCurrent"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:srcCompat="@mipmap/cloudy" />
+
+                <TextView
+                    android:id="@+id/tvNameDayFull"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Monday"
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/tvNameDateDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2 Jan 2022"
+                    android:textAlignment="center"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/tvLocalTimeDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/bg_white_rounded"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pressure"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
+
+                    <app.futured.donut.DonutProgressView
+                        android:id="@+id/viewDonutRain"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        app:donut_bgLineColor="@color/colorTransparentBlack"
+                        app:donut_cap="1.2"
+                        app:donut_gapAngle="90"
+                        app:donut_gapWidth="20"
+                        app:donut_strokeWidth="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/valuePressure"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="16sp"
+                            android:textAlignment="textStart"
+                            android:text="762.0"
+                            />
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:text="/"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="16sp"
+                            android:textAlignment="textEnd"
+                            android:text="1200.0"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <TableLayout
+                    android:layout_marginLeft="20dp"
+                    android:shrinkColumns="*"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/tvHumidity"
+                            android:layout_width="72dp"
+                            android:layout_height="wrap_content"
+                            android:text="Humidity:"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/valueHumidity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textAlignment="textStart"
+                            android:text="50 %"
+                            />
+
+                    </TableRow>
+
+                    <TableRow android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/tvTempFellsLike"
+                            android:layout_width="102dp"
+                            android:layout_height="wrap_content"
+                            android:text="Feeling temperature:"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/valueTempFellsLike"
+                            android:layout_gravity="center_vertical|left"
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:text="0 °С"
+                            android:textSize="16sp" />
+
+                    </TableRow>
+
+
+                    <TableRow android:layout_marginBottom="15dp">
+                        <TextView
+                            android:id="@+id/tvWindSpeed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Wind speed:"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/valueWindSpeed"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textAlignment="textStart"
+                            android:text="12:00 (km/h)" />
+
+                    </TableRow>
+
+
+                    <TableRow android:layout_marginBottom="15dp">
+
+                        <TextView
+                            android:id="@+id/tvGust"
+                            android:layout_width="151dp"
+                            android:layout_height="wrap_content"
+                            android:text="Gust:"
+                            android:textAlignment="textStart"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/valueGust"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textAlignment="textStart"
+                            android:text="10.0 (km/h)" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/bg_white_rounded"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="Weather hours"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listWeatherHour"
+                    android:layout_width="match_parent"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:clickable="false"
+                    android:focusable="false"
+                    tools:scrollbars="horizontal"/>
+
+                <TextView
+                    android:id="@+id/text_empty_view_weather_hours_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textSize="18sp"
+                    android:textStyle="italic"
+                    android:text="No data" />
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    app:tint="@color/colorTransparentBlack"
+                    android:layout_marginEnd="5dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/loading_circle_not_full"/>
+
+                <ImageView
+                    app:tint="@color/colorTransparentBlack"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/loading_circle_full" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</FrameLayout>

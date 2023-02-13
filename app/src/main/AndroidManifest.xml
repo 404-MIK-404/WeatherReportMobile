@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <application
+        android:name=".app.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -11,17 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp"
         tools:targetApi="31">
-        <service android:name="com.example.weatherapp.TimerService"/>
-        <activity android:name=".activity.WeatherCity" android:exported="false" android:theme="@style/TransparentThemeDay">
-            <meta-data android:name="android.app.lib_name" android:value="" />
-        </activity>
-
-        <activity android:name=".activity.Home" android:exported="false" android:theme="@style/TransparentThemeMorning">
+        <service android:name="com.example.weatherapp.com.example.domain.services.TimerService"/>
+        <activity android:name=".screens.activitys.Home" android:exported="false" android:theme="@style/TransparentThemeMorning">
             <meta-data android:name="android.app.lib_name" android:value="" />
         </activity>
 
         <activity
-            android:name=".activity.SplashScreen"
+            android:name=".screens.activitys.SplashScreen"
             android:exported="true"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
