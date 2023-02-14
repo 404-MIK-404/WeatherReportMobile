@@ -12,9 +12,15 @@
 
 ## Скриншоты ##
 
+1) Splash screen
+
 ![image](https://user-images.githubusercontent.com/71220872/218603316-e6b372e1-0566-4943-b8fa-a750d34d3303.png)
 
+2) Главное меню приложения
+
 ![image](https://user-images.githubusercontent.com/71220872/218603111-7695d5be-41e4-4e0d-b6d7-5e052aeb740e.png)
+
+3) Подробная информация о погоде
 
 ![image](https://user-images.githubusercontent.com/71220872/218603164-9dfba3ea-bec4-410f-b9e7-1ff8df3e25e5.png)
 
