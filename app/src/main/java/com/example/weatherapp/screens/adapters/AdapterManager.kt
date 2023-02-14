@@ -42,6 +42,7 @@ class AdapterManager {
         fun initListHours(listWeatherHour: RecyclerView, context: Context, weatherResponse: WeatherResponse){
             listWeatherHour.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
             listWeatherHour.adapter = adapterHours
+            TimeFormatters.DATE.formatter.timeZone = TimeZone.getTimeZone(weatherResponse.locationModel.timeZoneId)
             var time = TimeFormatters.DATE.formatter.format(Date())
             adapterHours.clearAllData()
             for (item in weatherResponse.forecastDayList.forecastDayModel){
