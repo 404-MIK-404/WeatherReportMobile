@@ -20,28 +20,28 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val getWeatherCurrentCity: GetWeatherCurrentCity,
                                         private val findWeatherCurrentCity: FindWeatherCurrentCity,
-                                        private val initAnimationBackground: InitAnimationBackground,
-                                        private val setThemeForBackground: SetThemeForBackground,
                                         private val startServiceTime: StartServiceTime,
 ): ViewModel() {
 
     private val resultResponseWeather = MutableLiveData<WeatherResponse>()
 
-    private val backgroundFragment = MutableLiveData<Drawable>()
-
-
-    fun getBackgroundFragment(): LiveData<Drawable> {
-        return backgroundFragment
-    }
+    private val modeIsDark = MutableLiveData<Boolean>()
 
     fun getResponseWeather(): LiveData<WeatherResponse> {
         return resultResponseWeather
     }
 
-    init {
-        Log.e("Test","VM create")
+    fun getModeIsDark(): LiveData<Boolean> {
+        return modeIsDark
     }
 
+    init {
+        Log.e("Init VM","VM was create")
+    }
+
+    fun changeDarkMode(result: Boolean){
+        this.modeIsDark.value = true
+    }
 
     fun findInfoAboutWeather(cityEnter: String,context: Context) {
         viewModelScope.launch {
@@ -64,15 +64,6 @@ class HomeViewModel @Inject constructor(private val getWeatherCurrentCity: GetWe
         }
     }
 
-    fun initAnimation(context: Context){
-        backgroundFragment.value = initAnimationBackground.initAnimationBackground(context=context)
-    }
-
-
-    fun availValueHomeFragment(context: Context,infoResponse: WeatherResponse,linear: LinearLayout){
-        setThemeForBackground.setThemeBackground(infoResponse.locationModel.localtime.toString(),linear,context)
-    }
-
 
     fun startServiceTime(context: Context,weatherResponse: WeatherResponse,serviceIntent: Intent){
         startServiceTime.startServiceTime(context = context, localtime = weatherResponse.locationModel.localtime!!, serviceIntent = serviceIntent)
@@ -80,7 +71,7 @@ class HomeViewModel @Inject constructor(private val getWeatherCurrentCity: GetWe
 
 
     override fun onCleared() {
-        Log.e("Test","VM clear")
+        Log.e("VM action","VM is clear")
         super.onCleared()
     }
 }

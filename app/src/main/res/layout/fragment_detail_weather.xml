@@ -13,7 +13,6 @@
 
         <LinearLayout
             android:id="@+id/infoWeatherLayout"
-            android:background="@drawable/animation_morning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">

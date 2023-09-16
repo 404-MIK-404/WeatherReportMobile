@@ -25,19 +25,10 @@ class DomainModule {
     }
 
     @Provides
-    fun provideSetThemeForBackground(localTimeTimer: LocalTimeTimer) : SetThemeForBackground {
-        return SetThemeForBackground(localTimeTimer = localTimeTimer)
-    }
-
-    @Provides
     fun provideLocalTimeTimer(): LocalTimeTimer {
         return LocalTimeTimer()
     }
 
-    @Provides
-    fun provideInitAnimationBackground() : InitAnimationBackground {
-        return InitAnimationBackground()
-    }
 
     @Provides
     @Singleton

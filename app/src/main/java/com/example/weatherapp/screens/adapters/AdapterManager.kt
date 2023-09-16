@@ -1,6 +1,7 @@
 package com.example.weatherapp.screens.adapters
 
 import android.content.Context
+import android.graphics.Rect
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,8 @@ import java.util.*
 
 class AdapterManager {
 
+
+
     companion object {
 
         private val adapterHours = WeatherHoursAdapter()
@@ -24,7 +27,7 @@ class AdapterManager {
 
 
         fun initListDays(listWeatherHour: RecyclerView,context: Context,forecastDayList: List<ForecastDayModel>){
-            listWeatherHour.layoutManager = GridLayoutManager(context,5)
+            listWeatherHour.layoutManager = GridLayoutManager(context,3)
             listWeatherHour.adapter = adapterDays
             adapterDays.clearAllData()
             for (item in forecastDayList){

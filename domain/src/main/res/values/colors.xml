@@ -11,22 +11,14 @@
     <color name="colorTransparentStatusBar">#00ffffff</color>
 
     <color name="colorTransparentBlack">#99ffffff</color>
-
-    <color name="colorGradientStartMorning">#cd9cf2</color>
-    <color name="colorGradientCenterMorning">#ee609c</color>
-    <color name="colorGradientEndMorning">#b465da</color>
-
-    <color name="colorGradientStartDay">#fa709a</color>
-    <color name="colorGradientCenterDay">#ff5858</color>
-    <color name="colorGradientEndDay">#f5576c</color>
-
-    <color name="colorGradientStartEvening">#4e4376</color>
-    <color name="colorGradientCenterEvening">#537895</color>
-    <color name="colorGradientEndEvening">#30cfd0</color>
-
-    <color name="colorGradientStartNight">#B8DCFF</color>
-    <color name="colorGradientCenterNight">#517fa4</color>
-    <color name="colorGradientEndNight">#2a5298</color>
+    
+    <color name="darkModeGradientStart">#AC32E4</color>
+    <color name="darkModeGradientCenter">#7918F2</color>
+    <color name="darkModeGradientEnd">#4801FF</color>
+    
+    <color name="notDarkModeGradientStart">#5D9FFF</color>
+    <color name="notDarkModeGradientCenter">#B8DCFF</color>
+    <color name="notDarkModeGradientEnd">#6BBBFF</color>
 
 
 </resources>
