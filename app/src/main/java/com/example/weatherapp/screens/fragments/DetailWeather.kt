@@ -57,8 +57,7 @@ class DetailWeather : Fragment() {
 
     private val updateTime: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(p0: Context, p1: Intent) {
-            localTimeTimer.changeTime(p1.getLongExtra(TimerService.TIME_EXTRA,0L),
-                binding.tvLocalTimeDay,binding.infoWeatherLayout,activity?.baseContext!!)
+            localTimeTimer.changeTime(p1.getLongExtra(TimerService.TIME_EXTRA,0L), binding.tvLocalTimeDay)
         }
 
     }

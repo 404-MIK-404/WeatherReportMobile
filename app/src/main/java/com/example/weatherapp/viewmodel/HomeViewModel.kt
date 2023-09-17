@@ -18,7 +18,10 @@ import kotlinx.coroutines.*
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val getWeatherCurrentCity: GetWeatherCurrentCity,
+class HomeViewModel @Inject constructor(
+                                        private val setDarkMode: SetDarkMode,
+                                        private val findInfoAboutDarkMode: FindInfoAboutDarkMode,
+                                        private val getWeatherCurrentCity: GetWeatherCurrentCity,
                                         private val findWeatherCurrentCity: FindWeatherCurrentCity,
                                         private val startServiceTime: StartServiceTime,
 ): ViewModel() {
@@ -27,20 +30,36 @@ class HomeViewModel @Inject constructor(private val getWeatherCurrentCity: GetWe
 
     private val modeIsDark = MutableLiveData<Boolean>()
 
+
     fun getResponseWeather(): LiveData<WeatherResponse> {
         return resultResponseWeather
     }
 
+
     fun getModeIsDark(): LiveData<Boolean> {
         return modeIsDark
     }
+
+    fun getModeIsDarkV2() : Boolean? {
+        return modeIsDark.value
+    }
+
 
     init {
         Log.e("Init VM","VM was create")
     }
 
     fun changeDarkMode(result: Boolean){
-        this.modeIsDark.value = true
+        if (result != this.modeIsDark.value){
+            setDarkMode.execute(result)
+            this.modeIsDark.value = result
+        }
+    }
+
+    fun findInfoDarkMode(){
+        if (this.modeIsDark.value == null){
+            this.modeIsDark.value = findInfoAboutDarkMode.execute()
+        }
     }
 
     fun findInfoAboutWeather(cityEnter: String,context: Context) {

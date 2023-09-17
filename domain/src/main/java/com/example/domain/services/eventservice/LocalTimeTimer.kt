@@ -9,9 +9,8 @@ import java.util.Date
 
 class LocalTimeTimer {
 
-    private var isChange = false
 
-    fun changeTime(time: Long, textViewTimeLocal: TextView, layout: LinearLayout, context: Context){
+    fun changeTime(time: Long, textViewTimeLocal: TextView){
         textViewTimeLocal.text = TimeFormatters.TIME.formatter.format(time)
     }
 
