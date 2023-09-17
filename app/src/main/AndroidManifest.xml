@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeatherApp"
         tools:targetApi="31">
+
         <service android:name="com.example.domain.services.TimerService"/>
-        <activity android:name=".screens.activitys.Home" android:exported="false" android:theme="@style/TransparentThemeMorning">
+
+
+        <activity android:name=".screens.activitys.Home" android:exported="false" android:theme="@style/NotDarkThemeApp">
             <meta-data android:name="android.app.lib_name" android:value="" />
         </activity>
 

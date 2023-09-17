@@ -1,6 +1,7 @@
 package com.example.weatherapp.di
 
 import com.example.domain.func.*
+import com.example.domain.repository.DarkModeRepository
 import com.example.domain.repository.WeatherRepository
 import com.example.domain.services.eventservice.LocalTimeTimer
 import com.example.domain.services.TimerService
@@ -20,13 +21,18 @@ class DomainModule {
     }
 
     @Provides
+    fun provideFindInfoAboutDarkMode(darkModeRepository: DarkModeRepository) : FindInfoAboutDarkMode {
+        return FindInfoAboutDarkMode(darkModeRepository = darkModeRepository)
+    }
+
+    @Provides
     fun provideFindWeatherCurrentCity(weatherRepository: WeatherRepository) : FindWeatherCurrentCity{
         return FindWeatherCurrentCity(weatherRepository = weatherRepository)
     }
 
     @Provides
-    fun provideSetThemeForBackground(localTimeTimer: LocalTimeTimer) : SetThemeForBackground {
-        return SetThemeForBackground(localTimeTimer = localTimeTimer)
+    fun provideSetDarkMode(darkModeRepository: DarkModeRepository) : SetDarkMode {
+        return SetDarkMode(darkModeRepository = darkModeRepository)
     }
 
     @Provides
@@ -34,10 +40,6 @@ class DomainModule {
         return LocalTimeTimer()
     }
 
-    @Provides
-    fun provideInitAnimationBackground() : InitAnimationBackground {
-        return InitAnimationBackground()
-    }
 
     @Provides
     @Singleton

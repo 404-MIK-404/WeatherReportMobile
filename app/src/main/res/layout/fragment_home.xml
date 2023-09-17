@@ -14,39 +14,47 @@
         <LinearLayout
             android:id="@+id/homeLinearLayout"
             android:layout_width="match_parent"
-            android:background="@drawable/animation_morning"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
             android:paddingTop="40dp"
             android:clickable="true"
             android:orientation="vertical"
             android:focusable="true">
 
 
+            <Switch
+                android:id="@+id/changeDarkMode"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="20sp"
+                android:text="Dark mode"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
             <android.widget.SearchView
                 android:id="@+id/searchViewCityWeather"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="30dp"
+                android:queryBackground="@android:color/transparent"
+                android:layout_height="60dp"
                 android:background="@drawable/bg_white_rounded"
                 android:gravity="center_horizontal|center_vertical"
                 android:iconifiedByDefault="false"
+                android:paddingStart="-8dp"
                 android:layout_marginVertical="8dp"
-                android:layout_alignParentTop="true"
                 android:queryHint="Search city here" />
 
             <ImageView
                 android:id="@+id/tvIconWeatherCity"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginHorizontal="20dp"
                 app:srcCompat="@mipmap/cloudy" />
 
             <TextView
                 android:id="@+id/viewNameCity"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:text="Moscow"
+                android:textAlignment="center"
                 android:textSize="30sp" />
 
             <TextView
@@ -60,7 +68,6 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="30dp"
                 android:background="@drawable/bg_white_rounded"
                 android:gravity="center_horizontal"
@@ -74,22 +81,23 @@
 
                     <TextView
                         android:id="@+id/tvTimeLocalCurrentCity"
-                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:textAlignment="center"
                         android:text="Local time"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
 
                     <TextView
                         android:id="@+id/tvUV"
                         android:gravity="center_horizontal"
                         android:text="UV"
-                        android:textSize="12sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/tvHumidity"
                         android:gravity="center_horizontal"
                         android:text="Rain %"
-                        android:textSize="12sp" />
+                        android:textSize="15sp"/>
 
 
                 </TableRow>
@@ -101,7 +109,7 @@
 
                     <TextView
                         android:id="@+id/valueTimeLocalCurrentCity"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="00:00"
@@ -135,7 +143,6 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:layout_marginHorizontal="20dp"
                     android:background="@drawable/bg_white_rounded"
                     android:orientation="vertical">
 
@@ -146,15 +153,17 @@
                         android:textAlignment="center"
                         android:textSize="20sp"
                         android:layout_marginBottom="10dp"
-                        android:text="Weather for the 5 days" />
+                        android:text="Weather for the 3 days" />
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/listWeatherDays"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
                         android:autofillHints="Test"
                         android:clickable="false"
                         android:focusable="false"
+                        android:clipToPadding="false"
                         tools:scrollbars="horizontal" />
 
                     <TextView
@@ -169,28 +178,6 @@
 
                 </LinearLayout>
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_horizontal|center_vertical"
-                android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_marginEnd="5dp"
-                    app:tint="@color/colorTransparentBlack"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@mipmap/loading_circle_full"/>
-
-                <ImageView
-                    app:tint="@color/colorTransparentBlack"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@mipmap/loading_circle_not_full"/>
 
             </LinearLayout>
 

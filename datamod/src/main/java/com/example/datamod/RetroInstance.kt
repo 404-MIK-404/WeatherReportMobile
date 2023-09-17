@@ -1,6 +1,6 @@
 package com.example.datamod
 
-import com.google.gson.TypeAdapterFactory
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

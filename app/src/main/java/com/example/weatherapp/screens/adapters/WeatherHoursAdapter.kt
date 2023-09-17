@@ -16,7 +16,6 @@ class WeatherHoursAdapter: RecyclerView.Adapter<WeatherHoursAdapter.WeatherHours
 
     class WeatherHoursHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = WeatherCityHourItemBinding.bind(item)
-
         fun bind(weatherHours: WeatherHours) = with(binding){
             tvTimeWeatherCity.text = weatherHours.hour
             tvTimeTempHourWeatherCity.text = weatherHours.temp
@@ -27,6 +26,7 @@ class WeatherHoursAdapter: RecyclerView.Adapter<WeatherHoursAdapter.WeatherHours
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherHoursHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.weather_city_hour_item,parent,false)
+        view.setPadding(25,0,25,0)
         return WeatherHoursHolder(view)
     }
 

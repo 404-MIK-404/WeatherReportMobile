@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.WeatherDay
@@ -11,11 +12,11 @@ import com.example.weatherapp.databinding.Weather5DayItemBinding
 
 class WeatherDaysAdapter: RecyclerView.Adapter<WeatherDaysAdapter.WeatherDaysHolder>() {
 
+
     val weatherDayList = ArrayList<WeatherDay>()
 
     class WeatherDaysHolder(item: View): RecyclerView.ViewHolder(item){
         val binding = Weather5DayItemBinding.bind(item)
-
         fun bind(weatherDay: WeatherDay) = with(binding){
             imageWeather.setImageResource(weatherDay.image)
             tvNameDay.text = weatherDay.nameDay

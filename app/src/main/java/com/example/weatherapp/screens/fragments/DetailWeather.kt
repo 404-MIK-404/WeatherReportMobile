@@ -13,7 +13,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import com.example.domain.services.eventservice.LocalTimeTimer
 import com.example.domain.services.TimerService
-import com.example.weatherapp.animation.AnimationActivity
 import com.example.weatherapp.databinding.FragmentDetailWeatherBinding
 import com.example.weatherapp.screens.outinformation.InformationWeather
 import com.example.weatherapp.viewmodel.HomeViewModel
@@ -49,23 +48,16 @@ class DetailWeather : Fragment() {
                 InformationWeather.setValueWeatherHour(activity?.baseContext!!,binding, response)
             } catch (_:java.lang.RuntimeException){
                 InformationWeather.setEmptyRecycleView(titleTextView = binding.textEmptyViewWeatherHoursList, listWeatherInfo = binding.listWeatherHour)
-            } finally {
-                vm.initAnimation(activity?.baseContext!!)
             }
         })
 
-        vm.getBackgroundFragment().observe(viewLifecycleOwner, Observer { color ->
-            binding.infoWeatherLayout.background = color
-            AnimationActivity.initActivityAnimation(binding.infoWeatherLayout.background)
-        })
     }
 
 
 
     private val updateTime: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(p0: Context, p1: Intent) {
-            localTimeTimer.changeTime(p1.getLongExtra(TimerService.TIME_EXTRA,0L),
-                binding.tvLocalTimeDay,binding.infoWeatherLayout,activity?.baseContext!!)
+            localTimeTimer.changeTime(p1.getLongExtra(TimerService.TIME_EXTRA,0L), binding.tvLocalTimeDay)
         }
 
     }

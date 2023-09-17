@@ -8,19 +8,5 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="TransparentThemeMorning" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/animation_morning</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="TransparentThemeDay" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/animation_day</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
 
 </resources>
