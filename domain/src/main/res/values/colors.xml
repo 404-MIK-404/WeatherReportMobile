@@ -12,13 +12,13 @@
 
     <color name="colorTransparentBlack">#99ffffff</color>
     
-    <color name="darkModeGradientStart">#AC32E4</color>
-    <color name="darkModeGradientCenter">#7918F2</color>
-    <color name="darkModeGradientEnd">#4801FF</color>
+    <color name="darkModeGradientStart">#65379B</color>
+    <color name="darkModeGradientCenter">#886AEA</color>
+    <color name="darkModeGradientEnd">#5753C9</color>
     
-    <color name="notDarkModeGradientStart">#5D9FFF</color>
-    <color name="notDarkModeGradientCenter">#B8DCFF</color>
-    <color name="notDarkModeGradientEnd">#6BBBFF</color>
+    <color name="notDarkModeGradientStart">#6E7FF3</color>
+    <color name="notDarkModeGradientCenter">#B0B8DCFF</color>
+    <color name="notDarkModeGradientEnd">#D05D9FFF</color>
 
 
 </resources>

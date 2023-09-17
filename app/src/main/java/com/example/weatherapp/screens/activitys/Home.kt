@@ -40,7 +40,6 @@ class Home : AppCompatActivity() {
                 setTheme(R.style.NotDarkThemeApp)
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
-            initAnimationBackground()
         }
         setContentView(binding.root)
         viewPageFragments = findViewById(R.id.viewPageFragments)
@@ -70,6 +69,7 @@ class Home : AppCompatActivity() {
             Log.i("Test change dark mode", res.toString())
 
         }
+        initAnimationBackground()
     }
 
 
